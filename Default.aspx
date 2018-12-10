@@ -11,6 +11,31 @@
     <form id="form1" runat="server">
     <div>
     
+        姓名 :
+        <asp:TextBox ID="name" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="name" ErrorMessage="請輸入姓名" ForeColor="#6699FF"></asp:RequiredFieldValidator>
+        <br />
+        電話 :
+        <asp:TextBox ID="phone" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="phone" ErrorMessage="請輸入電話" ForeColor="#3399FF"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="phone" ErrorMessage="請輸入電話格式" ValidationExpression="[0-9]*"></asp:RegularExpressionValidator>
+        <br />
+        <br />
+        優待券號碼 : <br />
+        <asp:TextBox ID="cp1" runat="server"></asp:TextBox>
+        <br />
+        再次輸入 :<br />
+        <asp:TextBox ID="cp2" runat="server"></asp:TextBox>
+        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="cp1" ControlToValidate="cp2" ErrorMessage="請再次確認" ForeColor="Red"></asp:CompareValidator>
+        <br />
+        <br />
+        輸入Email :
+        <asp:TextBox ID="email" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="email" ErrorMessage="請輸入Email" ForeColor="Red"></asp:RequiredFieldValidator>
+        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="email" ErrorMessage="請輸入正確格式" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
+        <br />
+        <br />
+    
         <asp:CheckBox ID="C1" runat="server" Text="原味披薩" AutoPostBack="True" OnCheckedChanged="C1_CheckedChanged" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 數量&nbsp;&nbsp; 
         <asp:DropDownList ID="no1" runat="server" Height="30px" Width="148px" AutoPostBack="True">
